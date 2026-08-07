@@ -5,7 +5,46 @@
  * Date: 2026-08-07
  */
 
-input/code.cpp: In function 'void solve()':
-input/code.cpp:43:26: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<int>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
-   43 |         for(int j = 0; j < arr.size(); j++){
-      |                        ~~^~~~~~~~~~~~
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define Code ios_base::sync_with_stdio(false);
+#define By cin.tie(NULL);
+#define Rikie cout.tie(NULL);
+#define ll long long
+vector<int> arr;
+int tar ;
+int M = 1e9 + 7;  
+void solve(){
+    int n, x;
+    cin >> n >> x;
+    tar = x;
+    for(int i = 0 ; i < n; i++){
+        int x;
+        cin >> x;
+        arr.push_back(x);
+    }
+ 
+    vector<ll> dp(x+1, 0LL);
+    dp[x] = 1;
+    int sz = arr.size();
+    for(int i = x-1 ; i >= 0; i--){
+        for(int j = 0; j < sz; j++){
+            if(i + arr[j] <= x){
+                dp[i] = (dp[i] + dp[i+arr[j]]) % M;
+            }
+        }
+    }
+    cout << dp[0] << endl;
+}
+ 
+int main(){
+ 
+    Code By Rikie
+ 
+    
+        solve();
+ 
+ 
+    return 0;
+}
