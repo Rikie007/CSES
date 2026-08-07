@@ -33,7 +33,7 @@ void solve(){
             if(i + arr[j] <= x){
                 dp[i] = (dp[i] + dp[i+arr[j]]) ;
                 if(dp[i] >= M){
-                    dp[i] %= M;
+                    dp[i] -= M;
                 }
             }
         }
