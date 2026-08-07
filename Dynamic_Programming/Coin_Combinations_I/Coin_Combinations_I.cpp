@@ -31,7 +31,10 @@ void solve(){
     for(int i = x-1 ; i >= 0; i--){
         for(int j = 0; j < sz; j++){
             if(i + arr[j] <= x){
-                dp[i] = (dp[i] + dp[i+arr[j]]) % M;
+                dp[i] = (dp[i] + dp[i+arr[j]]) ;
+                if(dp[i] >= M){
+                    dp[i] %= M;
+                }
             }
         }
     }
