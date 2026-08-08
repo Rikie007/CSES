@@ -21,7 +21,7 @@ ll sol(int i, int j, vector<vector<char>> &grid){
         return 1;
     }
     if(t[i][j] != -1) return t[i][j];
-    return t[i][j] = sol(i+1,j,grid) + sol(i, j+1, grid);
+    return t[i][j] = (sol(i+1,j,grid) + sol(i, j+1, grid)) % M;
 }
 void solve(){
     int n;
