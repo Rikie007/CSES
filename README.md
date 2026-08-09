@@ -7,6 +7,7 @@ My accepted solutions to the [CSES Problem Set](https://cses.fi/problemset/), au
 
 | Problem | Category | Solutions |
 | :--- | :--- | :--- |
+| Edit Distance | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Edit_Distance/Edit_Distance.cpp) |
 | Counting Towers | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Counting_Towers/Counting_Towers.cpp) |
 | Array Description | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Array_Description/Array_Description.cpp) |
 | Book Shop | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Book_Shop/Book_Shop.cpp) |
