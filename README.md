@@ -7,6 +7,7 @@ My accepted solutions to the [CSES Problem Set](https://cses.fi/problemset/), au
 
 | Problem | Category | Solutions |
 | :--- | :--- | :--- |
+| Rectangle Cutting | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Rectangle_Cutting/Rectangle_Cutting.cpp) |
 | Longest Common Subsequence | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Longest_Common_Subsequence/Longest_Common_Subsequence.cpp) |
 | Edit Distance | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Edit_Distance/Edit_Distance.cpp) |
 | Counting Towers | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Counting_Towers/Counting_Towers.cpp) |
