@@ -5,47 +5,66 @@
  * Date: 2026-08-10
  */
 
-    #include <bits/stdc++.h>
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
  
-    #define Code ios_base::sync_with_stdio(false);
-    #define By cin.tie(NULL);
-    #define Rikie cout.tie(NULL);
-    #define ll long long
-    int n;
-    vector<int> arr;
-    ll t[5001][5001];
-    ll sol(int i, int j){
-        if(i > j){
-            return 0;
-        }
-        if(i >= n || j < 0) return 0;
-        if(t[i][j] != -1){
-            return t[i][j];
-        }
-        ll ans = 0;
-        
-        ans = max({arr[i] + min(sol(i+2,j), sol(i+1,j-1)), arr[j] + min(sol(i+1,j-1), sol(i,j-2))});
+#define Code ios_base::sync_with_stdio(false);
+#define By cin.tie(NULL);
+#define Rikie cout.tie(NULL);
+#define ll long long
  
-        return t[i][j] = ans;
+int n;
+vector<int> arr;
+ll t[5001][5001];
+ 
+void solve() {
+    cin >> n;
+ 
+    arr.resize(n);
+ 
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
  
-    void solve(){
-        cin >> n;
-        for(int i = 0 ; i < n; i++){
-            int x;
-            cin >> x;
-            arr.push_back(x);
+    // Base case:
+    // Empty interval => 0
+    for (int i = 0; i < n; i++) {
+        t[i][i] = arr[i];
+    }
+ 
+    // length = size of current interval
+    for (int len = 2; len <= n; len++) {
+ 
+        for (int i = 0; i + len - 1 < n; i++) {
+ 
+            int j = i + len - 1;
+ 
+            ll left = arr[i] +
+                      min(
+                          (i + 2 <= j ? t[i + 2][j] : 0),
+                          (i + 1 <= j - 1 ? t[i + 1][j - 1] : 0)
+                      );
+ 
+            ll right = arr[j] +
+                       min(
+                           (i + 1 <= j - 1 ? t[i + 1][j - 1] : 0),
+                           (i <= j - 2 ? t[i][j - 2] : 0)
+                       );
+ 
+            t[i][j] = max(left, right);
         }
-        memset(t, -1LL , sizeof(t));
-        cout << sol(0,n-1);
     }
  
-    int main(){
+    cout << t[0][n - 1] << '\n';
+}
  
-        Code By Rikie
+int main() {
  
-            solve();
+    Code
+    By
+    Rikie
  
-        return 0;
-    }
+    solve();
+ 
+    return 0;
+}
