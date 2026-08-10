@@ -7,6 +7,7 @@ My accepted solutions to the [CSES Problem Set](https://cses.fi/problemset/), au
 
 | Problem | Category | Solutions |
 | :--- | :--- | :--- |
+| Money Sums | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Money_Sums/Money_Sums.cpp) |
 | Minimal Grid Path | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Minimal_Grid_Path/Minimal_Grid_Path.cpp) |
 | Rectangle Cutting | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Rectangle_Cutting/Rectangle_Cutting.cpp) |
 | Longest Common Subsequence | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Longest_Common_Subsequence/Longest_Common_Subsequence.cpp) |
