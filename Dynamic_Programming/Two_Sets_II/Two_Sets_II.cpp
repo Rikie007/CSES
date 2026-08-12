@@ -14,6 +14,7 @@ using namespace std;
 #define ll long long
 int n;
 int MOD = 1e9 + 7;
+const ll INV2 = 500000004;
 void solve(){
     cin >> n;
  
@@ -42,7 +43,7 @@ void solve(){
     ll ans = dp[n][total/2];
  
  
-    cout << ans/2 << endl;
+    cout << ans * INV2 % MOD << endl;
  
  
 }
