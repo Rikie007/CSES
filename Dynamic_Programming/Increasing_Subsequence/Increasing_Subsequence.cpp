@@ -12,71 +12,28 @@ using namespace std;
 #define By cin.tie(NULL);
 #define Rikie cout.tie(NULL);
 #define ll long long
-int n;
-vector<vector<int>> arr;
  
-void solve() {
+void solve(){
+    int n;
     cin >> n;
- 
-    for (int i = 0; i < n; i++) {
+    vector<int> arr;
+    for(int i = 0 ; i < n; i++){
         int x;
         cin >> x;
-        arr.push_back({x, i});
+        arr.push_back(x);
+    }
+    vector<int> tails;
+ 
+    for (int x : arr) {
+        auto it = lower_bound(tails.begin(), tails.end(), x);
+ 
+        if (it == tails.end())
+            tails.push_back(x);
+        else
+            *it = x;
     }
  
-    vector<int> ng(n);
-    stack<int> st;
- 
-    ng[n - 1] = -1;
-    st.push(n - 1);
- 
-    for (int i = n - 2; i >= 0; i--) {
- 
-        if (arr[st.top()][0] > arr[i][0]) {
-            ng[i] = st.top();
-            st.push(i);
-        }
-        else {
-            while (!st.empty() && arr[st.top()][0] <= arr[i][0]) {
-                st.pop();
-            }
- 
-            if (st.empty()) {
-                ng[i] = -1;
-                st.push(i);
-            }
-            else {
-                ng[i] = st.top();
-                st.push(i);
-            }
-        }
-    }
- 
-    sort(arr.begin(), arr.end());
- 
-    vector<int> ans(n, 0);
- 
-    ans[arr[n - 1][1]] = 1;
- 
-    for (int i = n - 1; i >= 0; i--) {
- 
-        int originalIndex = arr[i][1];
- 
-        int ngei = ng[originalIndex];
- 
-        int tmp = 0;
- 
-        if (ngei != -1) {
-            tmp = ans[ngei];
-        }
- 
-        tmp++;
- 
-        ans[originalIndex] = max(ans[originalIndex], tmp);
-    }
- 
-    cout << *max_element(ans.begin(), ans.end()) << '\n';
- 
+    cout << tails.size();
 }
  
 int main(){
