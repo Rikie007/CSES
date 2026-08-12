@@ -13,36 +13,38 @@ using namespace std;
 #define Rikie cout.tie(NULL);
 #define ll long long
 int n;
-int T;
 int MOD = 1e9 + 7;
-ll t[125251][501];
-ll sol(int total, int n){
-    if(total == T/2){
-        return 1;
-    }
-    if(total < T/2){
-        return 0;
-    }
-    if(n == 0) return 0;
-    if(t[total][n] != -1){
-        return t[total][n];
-    }
-    ll take = sol(total-n, n-1);
- 
-    ll notTake = sol(total, n-1);
- 
-    return t[total][n] = (take + notTake) % MOD;
-}
 void solve(){
     cin >> n;
  
     int total = (n * (n+1))/2;
-    T = total;
     if(total & 1) {
         cout << 0 << endl;return ;
     }
-    memset(t, -1, sizeof(t));
-    cout << sol(total, n)/2;
+ 
+    vector<vector<ll>> dp(n+1, vector<ll>(total/2+1, 0LL));
+ 
+    dp[0][0] = 1;
+    for(int i = 1; i <= min(n, total/2); i++){
+        dp[i][0] = 1;
+    }
+    for(int i = 1; i<= n; i++){
+        for(int j = 1; j <= total/2; j++){
+            dp[i][j] = dp[i-1][j];
+ 
+            if(j >= i) {
+                dp[i][j] += dp[i-1][j-i];
+                dp[i][j] %= MOD;
+            }
+        }
+    }
+ 
+    ll ans = dp[n][total/2];
+ 
+ 
+    cout << ans/2 << endl;
+ 
+ 
 }
  
 int main(){
