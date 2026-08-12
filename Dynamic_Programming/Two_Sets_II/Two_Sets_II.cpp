@@ -38,6 +38,9 @@ void solve(){
  
     int total = (n * (n+1))/2;
     T = total;
+    if(total & 1) {
+        cout << 0 << endl;return ;
+    }
     memset(t, -1, sizeof(t));
     cout << sol(total, n)/2;
 }
