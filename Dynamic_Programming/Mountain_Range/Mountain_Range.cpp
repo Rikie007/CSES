@@ -37,7 +37,7 @@ void solve() {
             st.push(i);
         }
         else {
-            while (!st.empty() && arr[st.top()][0] < arr[i][0]) {
+            while (!st.empty() && arr[st.top()][0] <= arr[i][0]) {
                 st.pop();
             }
  
@@ -69,7 +69,7 @@ void solve() {
             st.push(i);
         }
         else {
-            while (!st.empty() && arr[st.top()][0] < arr[i][0]) {
+            while (!st.empty() && arr[st.top()][0] <= arr[i][0]) {
                 st.pop();
             }
  
@@ -109,7 +109,7 @@ void solve() {
  
         tmp++;
  
-        ans[originalIndex] = tmp;
+        ans[originalIndex] = max(ans[originalIndex], tmp);
     }
  
     cout << *max_element(ans.begin(), ans.end()) << '\n';
