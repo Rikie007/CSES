@@ -7,6 +7,7 @@ My accepted solutions to the [CSES Problem Set](https://cses.fi/problemset/), au
 
 | Problem | Category | Solutions |
 | :--- | :--- | :--- |
+| Mountain Range | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Mountain_Range/Mountain_Range.cpp) |
 | Two Sets II | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Two_Sets_II/Two_Sets_II.cpp) |
 | Removal Game | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Removal_Game/Removal_Game.cpp) |
 | Money Sums | Dynamic Programming | [ C++ ](https://github.com/Rikie007/CSES/blob/main/Dynamic_Programming/Money_Sums/Money_Sums.cpp) |
